@@ -1,4 +1,4 @@
-# I3 config files ver.1
+# I3 config files ver.2 w/ stow
 
 # Xresources      var      value       fallback
 set_from_resource $bg      background  #19043C
