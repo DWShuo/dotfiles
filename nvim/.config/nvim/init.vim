@@ -23,12 +23,13 @@ set tabstop=4
 set history=1000
 
 call plug#begin()
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/syntastic'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
-Plug 'mhartington/oceanic-next'
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 syntax enable
@@ -38,3 +39,6 @@ colorscheme gruvbox
 map <C-E> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16_gruvbox_dark_hard'
