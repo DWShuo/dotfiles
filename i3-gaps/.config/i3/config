@@ -1,4 +1,4 @@
-# ArchLabs i3 config
+# Arch i3wm-gaps config
 
 # border & title
 for_window [class="^.*"] border pixel 0, title_format "<b> %class >> %title </b>"
@@ -32,7 +32,7 @@ bar {
 
 # run with reload
 exec_always --no-startup-id xrdb -load ~/.Xresources
-exec_always --no-startup-id xset dpms 0 0 1800 &
+exec_always --no-startup-id xset dpms 0 0 900 &
 exec_always --no-startup-id xss-lock -- i3lock-fancy
 
 # run once
@@ -40,6 +40,7 @@ exec --no-startup-id xfsettingsd
 exec --no-startup-id ~/.screenlayout/mon.sh
 exec --no-startup-id udiskie --tray
 exec --no-startup-id blueman-applet
+exec --no-startup-id optimus-manager-qt
 
 #############         Bindings           ##################
 
@@ -51,9 +52,6 @@ bindsym F2 exec --no-startup-id rofi_run -r
 
 # core
 bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
-
-# logout script
-#bindsym $Mod+x exec --no-startup-id rofi_run -l
 
 # Screenshot
 bindsym Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png ; feh $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png'"
@@ -136,7 +134,7 @@ bindcode $Mod+23 layout toggle tabbed split
 #bindcode $Mod+23 layout toggle splitv splith
 
 # switch to workspace with urgent window
-for_window [urgent="latest"] focus
+for_window[urgent="latest"] focus
 focus_on_window_activation   fous
 
 # container layout
@@ -175,9 +173,9 @@ bindsym $Mod+Control+Shift+minus gaps outer all     minus 5
 ############    application settings   ############
 
 # assign applications to specific workspace
-#assign [class="(?i)(?:firefox)"] → 1
-#assign [class="(?i)(?:geany)"]   → 2
-assign [class="(?i)(?:geary)"]  → 5
+assign [class="(?i)(?:steam)"] → 4
+assign [class="(?i)(?:geary)"] → 5
+assign [class="(?i)(?:qbittorrent)"] → 6
 
 # focus, floating, & sticky
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
